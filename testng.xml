@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="LambdaTest CircleCI Suite" verbose="1">
+    <test name="Selenium Playground Tests">
+        <classes>
+            <class name="com.lambdatest.SimpleFormTest"/>
+        </classes>
+    </test>
+</suite>
