@@ -24,8 +24,15 @@ jobs:
           paths:
             - .m2/repository
 
+      - run:
+          name: Collect JUnit-format test results
+          when: always
+          command: |
+            mkdir -p ~/test-results/testng
+            find target/surefire-reports -maxdepth 2 -name 'TEST-*.xml' -exec cp {} ~/test-results/testng/ \;
+
       - store_test_results:
-          path: target/surefire-reports
+          path: ~/test-results/testng
 
       - store_artifacts:
           path: target/surefire-reports
